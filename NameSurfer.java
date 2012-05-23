@@ -39,7 +39,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 		if (e.getActionCommand().equals("Graphs")) {
 			
 		}
-		if (e.getActionCommand().equals("Clear")) removeAll();
+		if (e.getActionCommand().equals("Clear")) println("Clear");
 	}
 	
 	private JTextField nameField;
