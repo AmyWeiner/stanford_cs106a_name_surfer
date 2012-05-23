@@ -22,7 +22,7 @@ public class NameSurferEntry implements NameSurferConstants {
 		String result = "";
 		for (int i = 0; i < NDECADES; i ++) {
 			result += ranks.substring(0, ranks.indexOf(""));
-			ranks = ranks.substring(result.length() + 1);
+			String newRanks = ranks.substring(result.length() + 1);
 			int ranking = Integer.parseInt(result);
 			rank[i] = ranking;
 		}
@@ -50,8 +50,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * Returns a string that makes it easy to see the value of a NameSurferEntry.
  */
 	public String toString() {
-		// You need to turn this stub into a real implementation
-		return "";
+		return name + "[" + ranks + "]";
 	}
 	 
 	private String name;
