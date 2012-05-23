@@ -34,7 +34,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nameField) {
-			println("Graph: " + nameField.getText());
+			println("Graph: " + "\"" + nameField.getText() + "\"");
 		}
 		if (e.getActionCommand().equals("Graphs")) {
 			
