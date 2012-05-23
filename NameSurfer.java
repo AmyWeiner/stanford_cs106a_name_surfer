@@ -36,6 +36,8 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 		String abel = "Abel 664 613 626 575 542 491 497 422 381 385 354 582";
 		NameSurferEntry entry = new NameSurferEntry(abel);
 		println(entry);
+		println("Name:" + entry.getName());
+		println("Rank: " + entry.getRank(2));
 		
 		if (e.getSource() == nameField) {
 			println("Graph: " + "\"" + nameField.getText() + "\"");
