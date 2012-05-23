@@ -1,3 +1,10 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.TreeMap;
+
+import acm.util.ErrorException;
+
 /*
  * File: NameSurferDataBase.java
  * -----------------------------
@@ -19,7 +26,23 @@ public class NameSurferDataBase implements NameSurferConstants {
  * occurs as the file is being read.
  */
 	public NameSurferDataBase(String filename) {
-		// You fill this in
+		try {
+			BufferedReader rd = new BufferedReader(new FileReader(filename));
+			nameTable = new TreeMap<String,NameSurferEntry>();
+			while (true) {
+				String line = rd.readLine();
+				if (line == null) break;
+				 {
+					throw new ErrorException("Illegal exchange rate line");
+				}
+				nameTable.put(name, new NameSurferEntry());
+			}
+			rd.close();
+		} catch (IOException ex) {
+			throw new ErrorException(ex);
+		} catch (NumberFormatException ex) {
+			throw new ErrorException("Illegal number in data file");
+		}
 	}
 	
 /* Method: findEntry(name) */
@@ -32,5 +55,7 @@ public class NameSurferDataBase implements NameSurferConstants {
 		// You need to turn this stub into a real implementation
 		return null;
 	}
+	
+	private TreeMap<String,NameSurferEntry> nameTable;
 }
 
