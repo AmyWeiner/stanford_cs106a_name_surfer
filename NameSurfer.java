@@ -17,7 +17,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 * and initializing the interactors at the bottom of the window.
 	 */
 	public void init() {
-		JTextField nameField = new JTextField(JTEXT_FIELD_SIZE);
+		nameField = new JTextField(JTEXT_FIELD_SIZE);
 		nameField.addActionListener(this);
 		add(new JLabel("Name"), SOUTH);
 		add(nameField, SOUTH);
@@ -33,6 +33,14 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 * button actions.
 	 */
 	public void actionPerformed(ActionEvent e) {
-		// You fill this in
+		if (e.getSource() == nameField) {
+			println("Graph: " + nameField.getText());
+		}
+		if (e.getActionCommand().equals("Graphs")) {
+			
+		}
+		if (e.getActionCommand().equals("Clear")) removeAll();
 	}
+	
+	private JTextField nameField;
 }
