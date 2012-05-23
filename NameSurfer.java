@@ -33,12 +33,10 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 * button actions.
 	 */
 	public void actionPerformed(ActionEvent e) {
-		
 		if (e.getSource() == nameField) {
 			println("Graph: " + "\"" + nameField.getText() + "\"");
 		}
 		if (e.getActionCommand().equals("Graph")) {
-		//	String name = nameField.getText();
 			println("Graph: " + "\"" + nameField.getText() + "\"");
 		}
 		if (e.getActionCommand().equals("Clear")) println("Clear");
