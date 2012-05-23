@@ -43,8 +43,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * START_DECADE.  If a name has a rank below 1000, the rank value is 0.
  */
 	public int getRank(int decade) {
-		int index = decade % 10;
-		return rank[index];
+		return rank[decade];
 	}
 
 /**
