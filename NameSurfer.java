@@ -37,7 +37,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 			println("Graph: " + "\"" + nameField.getText() + "\"");
 		}
 		if (e.getActionCommand().equals("Graphs")) {
-			
+			println("Graph: " + "\"" + nameField.getText() + "\"");
 		}
 		if (e.getActionCommand().equals("Clear")) println("Clear");
 	}
