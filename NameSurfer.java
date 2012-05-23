@@ -18,6 +18,8 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 */
 	public void init() {
 		JTextField nameField = new JTextField(JTEXT_FIELD_SIZE);
+		nameField.addActionListener(this);
+		add(new JLabel("Name"), SOUTH);
 		add(new JButton("Graph"), SOUTH);
 		add(new JButton("Clear"), SOUTH);
 		addActionListeners();
