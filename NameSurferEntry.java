@@ -17,7 +17,7 @@ public class NameSurferEntry implements NameSurferConstants {
  * integers giving the rank of that name for each decade.
  */
 	public NameSurferEntry(String line) {
-		name = line.substring(0, line.indexOf(""));
+		name = line.substring(0, line.indexOf(" "));
 		ranks = line.substring(name.length() + 1);
 		StringTokenizer tokenizer = new StringTokenizer(ranks);
 		int i = 0;
