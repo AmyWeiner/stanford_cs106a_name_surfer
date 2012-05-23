@@ -19,12 +19,13 @@ public class NameSurferEntry implements NameSurferConstants {
 	public NameSurferEntry(String line) {
 		name = line.substring(0, line.indexOf(""));
 		ranks = line.substring(name.length() + 1);
-		String result = "";
-		for (int i = 0; i < NDECADES; i ++) {
-			result += ranks.substring(0, ranks.indexOf(""));
-			String newRanks = ranks.substring(result.length() + 1);
-			int ranking = Integer.parseInt(result);
+		StringTokenizer tokenizer = new StringTokenizer(ranks);
+		int i = 0;
+		while (tokenizer.hasMoreTokens()) {
+			String token = tokenizer.nextToken();
+			int ranking = Integer.parseInt(token);
 			rank[i] = ranking;
+			i ++;
 		}
 	}
 
