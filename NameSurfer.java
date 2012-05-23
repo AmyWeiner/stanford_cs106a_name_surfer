@@ -33,6 +33,9 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 * button actions.
 	 */
 	public void actionPerformed(ActionEvent e) {
+		String abel = "Abel 664 613 626 575 542 491 497 422 381 385 354 582";
+		
+		
 		if (e.getSource() == nameField) {
 			println("Graph: " + "\"" + nameField.getText() + "\"");
 		}
