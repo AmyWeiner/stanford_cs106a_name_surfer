@@ -34,6 +34,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 	 */
 	public void actionPerformed(ActionEvent e) {
 		String abel = "Abel 664 613 626 575 542 491 497 422 381 385 354 582";
+		NameSurferEntry entry = new NameSurferEntry(abel);
 		
 		
 		if (e.getSource() == nameField) {
