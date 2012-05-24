@@ -43,17 +43,17 @@ implements NameSurferConstants {
 	 * size of the canvas changes.
 	 */
 	public void update() {
-		drawMargins();
+		drawBorders();
 		drawGridLines();
-		
+		drawDecades();
 	}
 
-	private void drawMargins() {
-		drawTopMargins();
-		drawBottomMargins();
+	private void drawBorders() {
+		drawTopBorders();
+		drawBottomBorders();
 	}
 
-	private void drawTopMargins() {
+	private void drawTopBorders() {
 		int xUpperLeft = 0;
 		int xUpperRight = getWidth();
 		int yUpper = GRAPH_MARGIN_SIZE;
@@ -61,7 +61,7 @@ implements NameSurferConstants {
 		add(line);
 	}
 	
-	private void drawBottomMargins() {
+	private void drawBottomBorders() {
 		int xLowerLeft = 0;
 		int xLowerRight = getWidth();
 		int yLower = getHeight() - GRAPH_MARGIN_SIZE;
@@ -74,13 +74,19 @@ implements NameSurferConstants {
 		int yLower = getHeight();
 		int separation = getWidth() / 12;
 		for (int i = 0; i < NDECADES; i ++) {
-			drawVerticalLine(separation * i, yUpper, separation * i, yLower);
+			GLine line = new GLine(separation * i, yUpper, separation * i, yLower);
+			add(line);
 		}
 	}
 	
-	private void drawVerticalLine(int x1, int y1, int x2, int y2) {
-		GLine line = new GLine(x1, y1, x2, y2);
-		add(line);
+	private void drawDecades() {
+		int yLower = getHeight();
+		int separation = getWidth() / 12;
+		for (int i = 0; i < NDECADES; i ++) {
+			int year = START_DECADE + (10 * i);
+			GLabel label = new GLabel("" + year, separation * i, yLower);
+			add(label);
+		}
 	}
 }
 
