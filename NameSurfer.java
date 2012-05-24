@@ -46,7 +46,7 @@ public class NameSurfer extends ConsoleProgram implements NameSurferConstants {
 		if (e.getSource() == nameField) {
 			NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
 			String name = nameField.getText();
-			println("Graph: " + "\"" + nameField.getText() + "\"" + nameData.findEntry(name));
+			println("Graph: " + "\"" + nameData.findEntry(name));
 		}
 		if (e.getActionCommand().equals("Graph")) {
 			println("Graph: " + "\"" + nameField.getText() + "\"");
