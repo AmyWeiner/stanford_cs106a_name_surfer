@@ -72,7 +72,7 @@ implements NameSurferConstants {
 		int yUpper = 0;
 		int yLower = getHeight();
 		int separation = getWidth() / 12;
-		for (int i = 0; i < NDECADES - 1; i ++) {
+		for (int i = 0; i < NDECADES; i ++) {
 			drawVerticalLine(separation * i, yUpper, separation * i, yLower);
 		}
 	}
