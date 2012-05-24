@@ -43,6 +43,7 @@ implements NameSurferConstants {
 	 * size of the canvas changes.
 	 */
 	public void update() {
+		removeAll();
 		drawBorders();
 		drawGridLines();
 		drawDecades();
