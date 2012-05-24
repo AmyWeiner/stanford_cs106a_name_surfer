@@ -83,8 +83,9 @@ implements NameSurferConstants {
 		int yLower = getHeight();
 		int separation = getWidth() / 12;
 		for (int i = 0; i < NDECADES; i ++) {
+			int offset = 5;
 			int year = START_DECADE + (10 * i);
-			GLabel label = new GLabel("" + year, separation * i, yLower);
+			GLabel label = new GLabel("" + year, offset + separation * i, yLower);
 			add(label);
 		}
 	}
