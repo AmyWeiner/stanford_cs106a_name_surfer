@@ -43,8 +43,9 @@ implements NameSurferConstants {
 	 * size of the canvas changes.
 	 */
 	public void update() {
-	//	drawMargins();
+		drawMargins();
 		drawGridLines();
+		
 	}
 
 	private void drawMargins() {
