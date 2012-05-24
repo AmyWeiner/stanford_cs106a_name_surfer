@@ -44,6 +44,7 @@ implements NameSurferConstants {
 	 */
 	public void update() {
 		drawMargins();
+		drawGridLines();
 	}
 
 	private void drawMargins() {
@@ -64,6 +65,20 @@ implements NameSurferConstants {
 		int xLowerRight = getWidth();
 		int yLower = getHeight() - GRAPH_MARGIN_SIZE;
 		GLine line = new GLine(xLowerLeft, yLower, xLowerRight, yLower);
+		add(line);
+	}
+	
+	private void drawGridLines() {
+		int yUpper = 0;
+		int yLower = getHeight();
+		int separation = getWidth() / 12;
+		for (int i = 0; i < NDECADES - 1; i ++) {
+			drawVerticalLine(separation * i, yUpper, separation * i, yLower);
+		}
+	}
+	
+	private void drawVerticalLine(int x1, int y1, int x2, int y2) {
+		GLine line = new GLine(x1, y1, x2, y2);
 		add(line);
 	}
 }
