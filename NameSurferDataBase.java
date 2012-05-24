@@ -17,45 +17,44 @@ import acm.util.ErrorException;
  */
 
 public class NameSurferDataBase implements NameSurferConstants {
-	
-/* Constructor: NameSurferDataBase(filename) */
-/**
- * Creates a new NameSurferDataBase and initializes it using the
- * data in the specified file.  The constructor throws an error
- * exception if the requested file does not exist or if an error
- * occurs as the file is being read.
- */
+
+	/* Constructor: NameSurferDataBase(filename) */
+	/**
+	 * Creates a new NameSurferDataBase and initializes it using the
+	 * data in the specified file.  The constructor throws an error
+	 * exception if the requested file does not exist or if an error
+	 * occurs as the file is being read.
+	 */
 	public NameSurferDataBase(String filename) {
 		try {
-			BufferedReader rd = new BufferedReader(new FileReader(filename));
+			BufferedReader rd = new BufferedReader(new FileReader(NAMES_DATA_FILE));
 			nameTable = new TreeMap<String,NameSurferEntry>();
 			while (true) {
 				String line = rd.readLine();
 				if (line == null) break;
-				 {
-					throw new ErrorException("Illegal exchange rate line");
-				}
-				nameTable.put(name, new NameSurferEntry());
+				String name = line.substring(0, line.indexOf(" ")); 
+				nameTable.put(name, new NameSurferEntry(line));
 			}
 			rd.close();
 		} catch (IOException ex) {
 			throw new ErrorException(ex);
-		} catch (NumberFormatException ex) {
-			throw new ErrorException("Illegal number in data file");
-		}
+		} 
 	}
-	
-/* Method: findEntry(name) */
-/**
- * Returns the NameSurferEntry associated with this name, if one
- * exists.  If the name does not appear in the database, this
- * method returns null.
- */
+
+	/* Method: findEntry(name) */
+	/**
+	 * Returns the NameSurferEntry associated with this name, if one
+	 * exists.  If the name does not appear in the database, this
+	 * method returns null.
+	 */
 	public NameSurferEntry findEntry(String name) {
-		// You need to turn this stub into a real implementation
-		return null;
+		NameSurferEntry entry = nameTable.get(name);
+		if (entry == null) {
+			throw new ErrorException("No name entry for " + name);
+		}
+		return entry;
 	}
-	
+
 	private TreeMap<String,NameSurferEntry> nameTable;
 }
 
