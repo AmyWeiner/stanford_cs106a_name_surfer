@@ -16,7 +16,7 @@ public class NameSurferGraph extends ResizableGCanvas
  * Creates a new NameSurferGraph object that displays the data.
  */
 	public NameSurferGraph() {
-		// You fill in the details of the constructor
+		 
 	}
 
 /**

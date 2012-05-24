@@ -23,6 +23,8 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		add(nameField, SOUTH);
 		add(new JButton("Graph"), SOUTH);
 		add(new JButton("Clear"), SOUTH);
+		graph = new NameSurferGraph();
+	    add(graph, CENTER);
 		addActionListeners();
 	}
 
@@ -33,29 +35,17 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	 * button actions.
 	 */
 	public void actionPerformed(ActionEvent e) {
-		/*
-		String abel = "Abel 664 613 626 575 542 491 497 422 381 385 354 582";
-		NameSurferEntry entry = new NameSurferEntry(abel);
-		println(entry);
-		println("Name:" + entry.getName());
-		for (int i = 0; i < NDECADES; i ++) {
-		println("Rank: " + entry.getRank(i));
-		
-		
-		}
-	*/
 		if (e.getSource() == nameField) {
-			NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
-			String name = nameField.getText();
-			println("Graph: " + nameData.findEntry(name));
+			//NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
+			//String name = nameField.getText();
 		}
 		if (e.getActionCommand().equals("Graph")) {
-			NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
-			String name = nameField.getText();
-			println("Graph: " + nameData.findEntry(name));
+			//NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
+			//String name = nameField.getText();
 		}
 		if (e.getActionCommand().equals("Clear")) println("Clear");
 	}
 	
 	private JTextField nameField;
+	private NameSurferGraph graph;
 }
