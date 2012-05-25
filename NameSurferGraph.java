@@ -101,7 +101,7 @@ implements NameSurferConstants {
 			String name = entry.getName();
 			for (int j = 0; j < NDECADES; j ++) {
 				int rank = entry.getRank(j);
-				if (rank < GRAPH_MARGIN_SIZE) {
+				if (rank > 0 && rank < GRAPH_MARGIN_SIZE) {
 					rank = GRAPH_MARGIN_SIZE;
 				}
 				if (rank == 0) {
