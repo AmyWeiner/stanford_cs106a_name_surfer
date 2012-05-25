@@ -138,8 +138,9 @@ implements NameSurferConstants {
 				y2 = getHeight() - GRAPH_MARGIN_SIZE;
 			}
 			GLine line = new GLine(x1, y1, x2, y2);
+			line.setColor(colorGraph(c));
 			add(line);
-			//line.setColor(colorGraph(c));
+			
 		}
 	}
 
