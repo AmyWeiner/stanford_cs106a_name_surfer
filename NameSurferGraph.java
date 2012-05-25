@@ -105,9 +105,10 @@ implements NameSurferConstants {
 				label.setColor(colorGraph(i));
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
+				graphRankings(points, i);
 			}
 		}
-		graphRankings(points, i);
+		
 	}
 
 	private Color colorGraph(int c) {
