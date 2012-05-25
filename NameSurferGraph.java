@@ -103,15 +103,14 @@ implements NameSurferConstants {
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
 				label.setColor(colorGraph(i));
-				
+
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
-				graphRankings(points, i);
 			}
 		}
-			
+		graphRankings(points);
 	}
-	
+
 	private Color colorGraph(int i) {
 		if (i % 4 == 0) {
 			return Color.RED;
@@ -124,20 +123,18 @@ implements NameSurferConstants {
 		} 
 	}
 
-	private void graphRankings(ArrayList<GPoint> points, int x) {
+	private void graphRankings(ArrayList<GPoint> points) {
 		for (int i = 0; i < points.size(); i ++) {
-		double x1 = points.get(i).getX();
-		double y1 = points.get(i).getY();
-		double x2 = points.get(i + 1).getX();
-		double y2 = points.get(i + 1).getY();
-		GLine line = new GLine(x1, y1, x2, y2);
-		add(line);
-		line.setColor(colorGraph(x));
+			double x1 = points.get(i).getX();
+			double y1 = points.get(i).getY();
+			double x2 = points.get(i + 1).getX();
+			double y2 = points.get(i + 1).getY();
+			GLine line = new GLine(x1, y1, x2, y2);
+			add(line);
+		}
 	}
-		
-}
 
-private ArrayList<NameSurferEntry> entryList;
+	private ArrayList<NameSurferEntry> entryList;
 
 }
 
