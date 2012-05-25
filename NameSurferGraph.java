@@ -126,7 +126,7 @@ implements NameSurferConstants {
 	}
 
 	private void graphRankings(ArrayList<GPoint> points, int c) {
-		for (int i = 0; i < points.size(); i ++) {
+		for (int i = 0; i < points.size() -1; i ++) {
 			double x1 = points.get(i).getX();
 			double y1 = points.get(i).getY();
 			if (y1 == 0) {
