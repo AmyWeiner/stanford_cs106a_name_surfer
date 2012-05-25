@@ -111,11 +111,8 @@ implements NameSurferConstants {
 				} else {
 					graphPoint = rank;
 				}
-				name = name + " " + rank;
-				if (rank == 0) {
-					name = name +  " " + rank + " *";
-				}
-				GLabel label = new GLabel(name, j * separation, graphPoint);
+				GLabel label = new GLabel(name + " " + rank, j * separation, graphPoint);
+				if (rank == 0) label.setLabel(name + " " + rank + " *");
 				add(label);
 				label.setColor(colorGraph(i));
 				GPoint point = new GPoint(j * separation, rank);
