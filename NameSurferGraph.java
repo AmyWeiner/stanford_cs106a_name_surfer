@@ -100,7 +100,7 @@ implements NameSurferConstants {
 			String name = entry.getName();
 			for (int j = 0; j < NDECADES; j ++) {
 				int rank = entry.getRank(j);
-				GLabel label = new GLabel(name, j * separation, rank);
+				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
