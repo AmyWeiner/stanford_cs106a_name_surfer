@@ -94,8 +94,9 @@ implements NameSurferConstants {
 
 	public void drawGraph() {
 		int separation = getWidth() / 12;
-		ArrayList<GPoint> points = new ArrayList<GPoint>();
+		
 		for (int i = 0; i < entryList.size(); i ++) {
+			ArrayList<GPoint> points = new ArrayList<GPoint>();
 			NameSurferEntry entry = entryList.get(i);
 			String name = entry.getName();
 			for (int j = 0; j < NDECADES; j ++) {
@@ -105,8 +106,9 @@ implements NameSurferConstants {
 				label.setColor(colorGraph(i));
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
-				graphRankings(points, i);
+				
 			}
+			graphRankings(points, i);
 		}
 		
 	}
