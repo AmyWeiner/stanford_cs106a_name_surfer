@@ -101,14 +101,15 @@ implements NameSurferConstants {
 			String name = entry.getName();
 			for (int j = 0; j < NDECADES; j ++) {
 				int rank = entry.getRank(j);
+				int graphPoint = 0;
 				if (rank > 0 && rank < GRAPH_MARGIN_SIZE) {
-					rank = GRAPH_MARGIN_SIZE;
+					graphPoint = GRAPH_MARGIN_SIZE;
 				} else if (rank == 0) {
-					rank = getHeight() - GRAPH_MARGIN_SIZE;
+					graphPoint = getHeight() - GRAPH_MARGIN_SIZE;
 				}else if (rank > getHeight() - GRAPH_MARGIN_SIZE) {
-					rank = getHeight() - GRAPH_MARGIN_SIZE;
+					graphPoint = getHeight() - GRAPH_MARGIN_SIZE;
 				}
-				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
+				GLabel label = new GLabel(name + " " + rank, j * separation, graphPoint);
 				if (rank == 0) {
 					name = name + "*";
 				}
