@@ -108,7 +108,6 @@ implements NameSurferConstants {
 			}
 			graphRankings(points, i);
 		}
-		
 	}
 
 	private Color colorGraph(int c) {
