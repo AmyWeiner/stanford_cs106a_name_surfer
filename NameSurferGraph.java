@@ -103,11 +103,9 @@ implements NameSurferConstants {
 				int rank = entry.getRank(j);
 				if (rank > 0 && rank < GRAPH_MARGIN_SIZE) {
 					rank = GRAPH_MARGIN_SIZE;
-				}
-				if (rank == 0) {
+				} else if (rank == 0) {
 					rank = getHeight() - GRAPH_MARGIN_SIZE;
-				}
-				if (rank > getHeight() - GRAPH_MARGIN_SIZE) {
+				}else if (rank > getHeight() - GRAPH_MARGIN_SIZE) {
 					rank = getHeight() - GRAPH_MARGIN_SIZE;
 				}
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
