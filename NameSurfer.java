@@ -40,12 +40,13 @@ public class NameSurfer extends Program implements NameSurferConstants {
 			String name = nameField.getText();
 			NameSurferEntry entry = db.findEntry(name);
 			graph.addEntry(entry);
-			
+			graph.update();
 		}
 		if (e.getActionCommand().equals("Graph")) {
 			String name = nameField.getText();
 			NameSurferEntry entry = db.findEntry(name);
 			graph.addEntry(entry);
+			graph.update();
 		}
 		if (e.getActionCommand().equals("Clear")) graph.clear();
 	}
