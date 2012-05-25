@@ -51,9 +51,10 @@ public class NameSurferEntry implements NameSurferConstants {
 	public String toString() {
 		return name + "[" + ranks + "]";
 	}
-	 
-	private String name;
-	private String ranks;
-	private int[] rank = new int[NDECADES];  
+	
+	/* Private instance variables*/
+	private String name;							//String for the name contained within the entry
+	private String ranks;							//String for the rankings for the name within the entry
+	private int[] rank = new int[NDECADES];  		//array for each of the rank values associated with the name
 	
 }

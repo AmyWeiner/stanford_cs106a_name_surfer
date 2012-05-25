@@ -55,6 +55,7 @@ public class NameSurferDataBase implements NameSurferConstants {
 		return entry;
 	}
 
+	/* Instance variable for map providing link between name and entry */
 	private TreeMap<String,NameSurferEntry> nameTable;
 }
 

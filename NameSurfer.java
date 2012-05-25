@@ -38,12 +38,18 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nameField) {
 			String name = nameField.getText();
+			name = name.toLowerCase();
+			char first = Character.toUpperCase(name.charAt(0));
+			name = first + name.substring(1);
 			NameSurferEntry entry = db.findEntry(name);
 			graph.addEntry(entry);
 			graph.update();
 		}
 		if (e.getActionCommand().equals("Graph")) {
 			String name = nameField.getText();
+			name = name.toLowerCase();
+			char first = Character.toUpperCase(name.charAt(0));
+			name = first + name.substring(1);
 			NameSurferEntry entry = db.findEntry(name);
 			graph.addEntry(entry);
 			graph.update();
@@ -54,7 +60,8 @@ public class NameSurfer extends Program implements NameSurferConstants {
 		}
 	}
 	
-	private JTextField nameField;
-	private NameSurferGraph graph;
-	private NameSurferDataBase db;
+	/* private instance variables */
+	private JTextField nameField;					//text field for user to enter names
+	private NameSurferGraph graph;					//graph for displaying data
+	private NameSurferDataBase db;					//database for storing name entries and decade rankings
 }
