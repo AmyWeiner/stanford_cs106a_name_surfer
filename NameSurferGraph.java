@@ -16,7 +16,7 @@ implements NameSurferConstants {
 	 * Creates a new NameSurferGraph object that displays the data.
 	 */
 	public NameSurferGraph() {
-
+		entryList = new ArrayList<NameSurferEntry>();
 	}
 
 	/**
@@ -93,7 +93,14 @@ implements NameSurferConstants {
 	}
 	
 	public void drawGraph() {
-		
+		int separation = getWidth() / 12;
+		for (int i = 0; i < entryList.size(); i ++) {
+			NameSurferEntry entry = entryList.get(i);
+			String name = entry.getName();
+			int rank = entry.getRank(i);
+			GLabel label = new GLabel(name,i * separation, rank);
+			add(label);
+		}
 	}
 	
 	private ArrayList<NameSurferEntry> entryList;

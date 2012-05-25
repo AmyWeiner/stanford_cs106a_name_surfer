@@ -50,7 +50,7 @@ public class NameSurferDataBase implements NameSurferConstants {
 	public NameSurferEntry findEntry(String name) {
 		NameSurferEntry entry = nameTable.get(name);
 		if (entry == null) {
-			throw new ErrorException("No name entry for " + name);
+			return null;
 		}
 		return entry;
 	}
