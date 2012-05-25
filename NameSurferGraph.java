@@ -104,7 +104,7 @@ implements NameSurferConstants {
 				if (rank < GRAPH_MARGIN_SIZE) {
 					rank = GRAPH_MARGIN_SIZE;
 				} else if (rank == 0) {
-					rank = getHeight() - GRAPH_MARGIN_SIZE;
+					rank = 200;
 				}
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
