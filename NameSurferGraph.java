@@ -94,23 +94,26 @@ implements NameSurferConstants {
 
 	public void drawGraph() {
 		int separation = getWidth() / 12;
-		
+
 		for (int i = 0; i < entryList.size(); i ++) {
 			ArrayList<GPoint> points = new ArrayList<GPoint>();
 			NameSurferEntry entry = entryList.get(i);
 			String name = entry.getName();
 			for (int j = 0; j < NDECADES; j ++) {
 				int rank = entry.getRank(j);
+				if (rank < GRAPH_MARGIN_SIZE) {
+					rank = GRAPH_MARGIN_SIZE;
+				}
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
 				label.setColor(colorGraph(i));
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
-				
+
 			}
 			graphRankings(points, i);
 		}
-		
+
 	}
 
 	private Color colorGraph(int c) {
@@ -140,7 +143,7 @@ implements NameSurferConstants {
 			GLine line = new GLine(x1, y1, x2, y2);
 			line.setColor(colorGraph(c));
 			add(line);
-			
+
 		}
 	}
 
