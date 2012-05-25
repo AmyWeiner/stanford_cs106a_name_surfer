@@ -16,7 +16,6 @@ implements NameSurferConstants {
 	 * Creates a new NameSurferGraph object that displays the data.
 	 */
 	public NameSurferGraph() {
-		 addComponentListener(this);
 		entryList = new ArrayList<NameSurferEntry>();
 	}
 
@@ -136,8 +135,14 @@ implements NameSurferConstants {
 		for (int i = 0; i < points.size() -1; i ++) {
 			double x1 = points.get(i).getX();
 			double y1 = points.get(i).getY();
+			if (y1 == 0) {
+				y1 = 400;
+			}
 			double x2 = points.get(i + 1).getX();
 			double y2 = points.get(i + 1).getY();
+			if (y2 == 0) {
+				y2 = 400;
+			}
 			GLine line = new GLine(x1, y1, x2, y2);
 			line.setColor(colorGraph(c));
 			add(line);
