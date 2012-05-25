@@ -17,6 +17,7 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	 * and initializing the interactors at the bottom of the window.
 	 */
 	public void init() {
+		db = new NameSurferDataBase(NAMES_DATA_FILE);
 		nameField = new JTextField(JTEXT_FIELD_SIZE);
 		nameField.addActionListener(this);
 		add(new JLabel("Name"), SOUTH);
@@ -37,12 +38,12 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nameField) {
 			String name = nameField.getText();
-			NameSurferEntry entry = new NameSurferEntry(name);
+			NameSurferEntry entry = db.findEntry(name);
 			graph.addEntry(entry);
 		}
 		if (e.getActionCommand().equals("Graph")) {
 			String name = nameField.getText();
-			NameSurferEntry entry = new NameSurferEntry(name);
+			NameSurferEntry entry = db.findEntry(name);
 			graph.addEntry(entry);
 		}
 		if (e.getActionCommand().equals("Clear")) graph.clear();
@@ -50,4 +51,5 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	
 	private JTextField nameField;
 	private NameSurferGraph graph;
+	private NameSurferDataBase db;
 }
