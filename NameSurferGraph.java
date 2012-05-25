@@ -108,6 +108,8 @@ implements NameSurferConstants {
 					graphPoint = getHeight() - GRAPH_MARGIN_SIZE;
 				}else if (rank > getHeight() - GRAPH_MARGIN_SIZE) {
 					graphPoint = getHeight() - GRAPH_MARGIN_SIZE;
+				} else {
+					graphPoint = rank;
 				}
 				GLabel label = new GLabel(name + " " + rank, j * separation, graphPoint);
 				if (rank == 0) {
