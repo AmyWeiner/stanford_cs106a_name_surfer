@@ -102,11 +102,24 @@ implements NameSurferConstants {
 				int rank = entry.getRank(j);
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
+				colorGraph(i, label);
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
 			}
 		}
 			graphRankings(points);
+	}
+	
+	private void colorGraph(int i, GLabel label) {
+		if (i % 4 == 0) {
+			label.setColor(Color.RED);
+		} else if (i % 4 == 1) {
+			label.setColor(Color.BLUE);
+		} else if (i % 4 == 2) {
+			label.setColor(Color.ORANGE);
+		}else { 
+			label.setColor(Color.MAGENTA);
+		} 
 	}
 
 	private void graphRankings(ArrayList<GPoint> points) {
