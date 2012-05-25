@@ -103,6 +103,8 @@ implements NameSurferConstants {
 				int rank = entry.getRank(j);
 				if (rank < GRAPH_MARGIN_SIZE) {
 					rank = GRAPH_MARGIN_SIZE;
+				} else if (rank == 0) {
+					rank = getHeight() - GRAPH_MARGIN_SIZE;
 				}
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
@@ -132,18 +134,11 @@ implements NameSurferConstants {
 		for (int i = 0; i < points.size() -1; i ++) {
 			double x1 = points.get(i).getX();
 			double y1 = points.get(i).getY();
-			if (y1 < 1) {
-				y1 = getHeight() - GRAPH_MARGIN_SIZE;
-			}
 			double x2 = points.get(i + 1).getX();
 			double y2 = points.get(i + 1).getY();
-			if (y2 < 1) {
-				y2 = getHeight() - GRAPH_MARGIN_SIZE;
-			}
 			GLine line = new GLine(x1, y1, x2, y2);
 			line.setColor(colorGraph(c));
 			add(line);
-
 		}
 	}
 
