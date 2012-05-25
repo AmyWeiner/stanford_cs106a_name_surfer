@@ -50,11 +50,13 @@ implements NameSurferConstants {
 		drawGraph();
 	}
 
+	/* This method draws the upper and lower borders of the graph background. */
 	private void drawBorders() {
 		drawTopBorders();
 		drawBottomBorders();
 	}
 
+	/* This method draws the upper border of the graph background. */
 	private void drawTopBorders() {
 		int xUpperLeft = 0;
 		int xUpperRight = getWidth();
@@ -63,6 +65,7 @@ implements NameSurferConstants {
 		add(line);
 	}
 
+	/* This method draws the lower border of the graph background. */
 	private void drawBottomBorders() {
 		int xLowerLeft = 0;
 		int xLowerRight = getWidth();
@@ -71,6 +74,7 @@ implements NameSurferConstants {
 		add(line);
 	}
 
+	/* This method draws vertical gridlines of the graph background. */
 	private void drawGridLines() {
 		int yUpper = 0;
 		int yLower = getHeight();
@@ -81,17 +85,21 @@ implements NameSurferConstants {
 		}
 	}
 
+	/* This method labels the vertical gridlines of the graph background with the corresponding decades. */
 	private void drawDecades() {
 		int yLower = getHeight();
 		int separation = getWidth() / 12;
 		for (int i = 0; i < NDECADES; i ++) {
-			int offset = 5;
+			int offset = 5;								//provides for better readability 
 			int year = START_DECADE + (10 * i);
 			GLabel label = new GLabel("" + year, offset + separation * i, yLower);
 			add(label);
 		}
 	}
 
+	/* This method graphs the times series of the popularity of the names in the database, based on the name's
+	 * ranking for each decade labeled on the graph. Names with a ranking of 0*, indicate that the given name
+	 * did not appear in the top 1,000 for that decade. */
 	public void drawGraph() {
 		int separation = getWidth() / 12;
 
@@ -124,6 +132,7 @@ implements NameSurferConstants {
 
 	}
 
+	/* This method determines the color for which the name ranking time series will be drawn. */
 	private Color colorGraph(int c) {
 		if (c % 4 == 0) {
 			return Color.RED;
@@ -136,6 +145,7 @@ implements NameSurferConstants {
 		} 
 	}
 
+	/* This method plots the line graph of the name's changing rank in popularity for each decade. */
 	private void graphRankings(ArrayList<GPoint> points, int c) {
 		for (int i = 0; i < points.size() -1; i ++) {
 			double x1 = points.get(i).getX();
@@ -148,6 +158,7 @@ implements NameSurferConstants {
 		}
 	}
 
+	/* Instance variable for the list of names to appear on the graph at any given time */
 	private ArrayList<NameSurferEntry> entryList;
 
 }
