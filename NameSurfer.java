@@ -36,14 +36,16 @@ public class NameSurfer extends Program implements NameSurferConstants {
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nameField) {
-			//NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
-			//String name = nameField.getText();
+			String name = nameField.getText();
+			NameSurferEntry entry = new NameSurferEntry(name);
+			graph.addEntry(entry);
 		}
 		if (e.getActionCommand().equals("Graph")) {
-			//NameSurferDataBase nameData = new NameSurferDataBase(NAMES_DATA_FILE);
-			//String name = nameField.getText();
+			String name = nameField.getText();
+			NameSurferEntry entry = new NameSurferEntry(name);
+			graph.addEntry(entry);
 		}
-		if (e.getActionCommand().equals("Clear")) println("Clear");
+		if (e.getActionCommand().equals("Clear")) graph.clear();
 	}
 	
 	private JTextField nameField;
