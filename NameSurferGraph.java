@@ -138,7 +138,7 @@ implements NameSurferConstants {
 			}
 			GLine line = new GLine(x1, y1, x2, y2);
 			add(line);
-			line.setColor(colorGraph(c));
+			//line.setColor(colorGraph(c));
 		}
 	}
 
