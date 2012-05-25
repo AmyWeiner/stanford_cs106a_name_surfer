@@ -104,7 +104,7 @@ implements NameSurferConstants {
 			GPoint point = new GPoint(i * separation, rank);
 			points.add(point);
 		}
-		for (int i = 0; i < points.size(); i ++) {
+		for (int i = 0; i < points.size() + 1; i ++) {
 			double x1 = points.get(i).getX();
 			double y1 = points.get(i).getY();
 			double x2 = points.get(i + 1).getX();
