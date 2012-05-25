@@ -101,7 +101,6 @@ implements NameSurferConstants {
 			String name = entry.getName();
 			for (int j = 0; j < NDECADES; j ++) {
 				int rank = entry.getRank(j);
-				/*
 				if (rank > 0 && rank < GRAPH_MARGIN_SIZE) {
 					rank = GRAPH_MARGIN_SIZE;
 				} else if (rank == 0) {
@@ -109,11 +108,9 @@ implements NameSurferConstants {
 				}else if (rank > getHeight() - GRAPH_MARGIN_SIZE) {
 					rank = getHeight() - GRAPH_MARGIN_SIZE;
 				}
-				*/
-				
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				if (rank == 0) {
-					name = name + " *";
+					name = name + "*";
 				}
 				add(label);
 				label.setColor(colorGraph(i));
@@ -144,13 +141,6 @@ implements NameSurferConstants {
 			double y1 = points.get(i).getY();
 			double x2 = points.get(i + 1).getX();
 			double y2 = points.get(i + 1).getY();
-			if (y1 > 0 && y1 < GRAPH_MARGIN_SIZE) {
-				y1 = GRAPH_MARGIN_SIZE;
-			} else if (x1 == 0) {
-				y1 = getHeight() - GRAPH_MARGIN_SIZE;
-			}else if (y1 > getHeight() - GRAPH_MARGIN_SIZE) {
-				y1 = getHeight() - GRAPH_MARGIN_SIZE;
-			}
 			GLine line = new GLine(x1, y1, x2, y2);
 			line.setColor(colorGraph(c));
 			add(line);
