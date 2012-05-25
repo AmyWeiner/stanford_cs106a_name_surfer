@@ -106,18 +106,23 @@ implements NameSurferConstants {
 				points.add(point);
 			}
 		}
+		
 		for (int i = 0; i < points.size() + 1; i ++) {
+			graphRankings(points,i);
+		}
+	}
+
+	private void graphRankings(ArrayList<GPoint> points, int i) {
 			double x1 = points.get(i).getX();
 			double y1 = points.get(i).getY();
 			double x2 = points.get(i + 1).getX();
 			double y2 = points.get(i + 1).getY();
 			GLine line = new GLine(x1, y1, x2, y2);
 			add(line);
-		}
 	}
-
+	
 	private ArrayList<NameSurferEntry> entryList;
-
+	
 }
 
 
