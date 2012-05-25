@@ -98,7 +98,7 @@ implements NameSurferConstants {
 			NameSurferEntry entry = entryList.get(i);
 			String name = entry.getName();
 			int rank = entry.getRank(i);
-			GLabel label = new GLabel(name,i * separation, rank);
+			GLabel label = new GLabel(name, i * separation, rank);
 			add(label);
 		}
 	}
