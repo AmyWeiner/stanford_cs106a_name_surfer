@@ -131,6 +131,7 @@ implements NameSurferConstants {
 		double y2 = points.get(i + 1).getY();
 		GLine line = new GLine(x1, y1, x2, y2);
 		add(line);
+		line.setColor(colorGraph(i));
 	}
 }
 
