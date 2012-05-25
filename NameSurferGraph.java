@@ -16,6 +16,7 @@ implements NameSurferConstants {
 	 * Creates a new NameSurferGraph object that displays the data.
 	 */
 	public NameSurferGraph() {
+		 addComponentListener(this);
 		entryList = new ArrayList<NameSurferEntry>();
 	}
 
@@ -105,7 +106,7 @@ implements NameSurferConstants {
 					rank = GRAPH_MARGIN_SIZE;
 				}
 				if (rank == 0) {
-					rank = 200;
+					rank = getHeight() - GRAPH_MARGIN_SIZE;
 				}
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
