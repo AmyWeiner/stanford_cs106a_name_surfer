@@ -94,16 +94,28 @@ implements NameSurferConstants {
 	
 	public void drawGraph() {
 		int separation = getWidth() / 12;
+		ArrayList<GPoint> points = new ArrayList<GPoint>();
 		for (int i = 0; i < entryList.size(); i ++) {
 			NameSurferEntry entry = entryList.get(i);
 			String name = entry.getName();
 			int rank = entry.getRank(i);
 			GLabel label = new GLabel(name, i * separation, rank);
 			add(label);
+			GPoint point = new GPoint(i * separation, rank);
+			points.add(point);
+		}
+		for (int i = 0; i < points.size(); i ++) {
+			double x1 = points.get(i).getX();
+			double y1 = points.get(i).getY();
+			double x2 = points.get(i + 1).getX();
+			double y2 = points.get(i + 1).getY();
+			GLine line = new GLine(x1, y1, x2, y2);
+			add(line);
 		}
 	}
 	
 	private ArrayList<NameSurferEntry> entryList;
+	
 }
 
 
