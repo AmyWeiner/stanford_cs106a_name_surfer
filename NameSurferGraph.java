@@ -103,7 +103,7 @@ implements NameSurferConstants {
 				int rank = entry.getRank(j);
 				GLabel label = new GLabel(name + " " + rank, j * separation, rank);
 				add(label);
-				label.setColor(colorGraph(c));
+				label.setColor(colorGraph(i));
 
 				GPoint point = new GPoint(j * separation, rank);
 				points.add(point);
