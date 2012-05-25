@@ -23,7 +23,7 @@ implements NameSurferConstants {
 	 * Clears the list of name surfer entries stored inside this class.
 	 */
 	public void clear() {
-		// You fill this in
+		entryList.clear();
 	}
 
 	/**
@@ -32,7 +32,7 @@ implements NameSurferConstants {
 	 * simply stores the entry; the graph is drawn by calling update.
 	 */
 	public void addEntry(NameSurferEntry entry) {
-		// You fill this in
+		entryList.add(entry);
 	}
 
 	/**
@@ -47,6 +47,7 @@ implements NameSurferConstants {
 		drawBorders();
 		drawGridLines();
 		drawDecades();
+		drawGraph();
 	}
 
 	private void drawBorders() {
@@ -90,6 +91,12 @@ implements NameSurferConstants {
 			add(label);
 		}
 	}
+	
+	public void drawGraph() {
+		
+	}
+	
+	private ArrayList<NameSurferEntry> entryList;
 }
 
 
