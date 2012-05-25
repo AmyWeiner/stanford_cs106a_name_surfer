@@ -62,7 +62,7 @@ implements NameSurferConstants {
 		GLine line = new GLine(xUpperLeft, yUpper, xUpperRight, yUpper);
 		add(line);
 	}
-	
+
 	private void drawBottomBorders() {
 		int xLowerLeft = 0;
 		int xLowerRight = getWidth();
@@ -70,7 +70,7 @@ implements NameSurferConstants {
 		GLine line = new GLine(xLowerLeft, yLower, xLowerRight, yLower);
 		add(line);
 	}
-	
+
 	private void drawGridLines() {
 		int yUpper = 0;
 		int yLower = getHeight();
@@ -80,7 +80,7 @@ implements NameSurferConstants {
 			add(line);
 		}
 	}
-	
+
 	private void drawDecades() {
 		int yLower = getHeight();
 		int separation = getWidth() / 12;
@@ -91,18 +91,20 @@ implements NameSurferConstants {
 			add(label);
 		}
 	}
-	
+
 	public void drawGraph() {
 		int separation = getWidth() / 12;
 		ArrayList<GPoint> points = new ArrayList<GPoint>();
 		for (int i = 0; i < entryList.size(); i ++) {
 			NameSurferEntry entry = entryList.get(i);
 			String name = entry.getName();
-			int rank = entry.getRank(i);
-			GLabel label = new GLabel(name, i * separation, rank);
-			add(label);
-			GPoint point = new GPoint(i * separation, rank);
-			points.add(point);
+			for (int j = 0; j < NDECADES; j ++) {
+				int rank = entry.getRank(j);
+				GLabel label = new GLabel(name, j * separation, rank);
+				add(label);
+				GPoint point = new GPoint(j * separation, rank);
+				points.add(point);
+			}
 		}
 		for (int i = 0; i < points.size() + 1; i ++) {
 			double x1 = points.get(i).getX();
@@ -113,9 +115,9 @@ implements NameSurferConstants {
 			add(line);
 		}
 	}
-	
+
 	private ArrayList<NameSurferEntry> entryList;
-	
+
 }
 
 
