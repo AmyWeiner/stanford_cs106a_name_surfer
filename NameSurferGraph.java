@@ -115,7 +115,7 @@ implements NameSurferConstants {
 				if (rank == 0) label.setLabel(name + " " + rank + " *");
 				add(label);
 				label.setColor(colorGraph(i));
-				GPoint point = new GPoint(j * separation, rank);
+				GPoint point = new GPoint(j * separation, graphPoint);
 				points.add(point);
 
 			}
